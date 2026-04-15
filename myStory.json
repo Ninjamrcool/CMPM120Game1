@@ -1,0 +1,152 @@
+{
+    "Title": "Countries of North America",
+    "Credits": "Created by Tyler Roth (tdroth@ucsc.edu).",
+    "InitialLocation": "USA",
+    "Locations": {
+        "USA": {
+            "Body": "This is The United States of America.",
+            "Choices": [
+                {
+                    "Text": "North",
+                    "Target": "Canada"
+                },
+                {
+                    "Text": "South",
+                    "Target": "Mexico"
+                }
+            ]
+        },
+        "Canada": {
+            "Body": "This is Canada. Very cold!",
+            "Choices": [
+                {
+                    "Text": "South",
+                    "Target": "USA"
+                }
+            ]
+        },
+        "Mexico": {
+            "Body": "This is Mexico.",
+            "Choices": [
+                {
+                    "Text": "North",
+                    "Target": "USA"
+                },
+                {
+                    "Text": "Southwest",
+                    "Target": "Guatemala"
+                },
+                {
+                    "Text": "Southeast",
+                    "Target": "Belize"
+                }
+            ]
+        },
+        "Guatemala": {
+            "Body": "This is Guatemala.",
+            "Choices": [
+                {
+                    "Text": "North",
+                    "Target": "Mexico"
+                },
+                {
+                    "Text": "Northeast",
+                    "Target": "Belize"
+                },
+                {
+                    "Text": "Southeast",
+                    "Target": "Honduras"
+                },
+                {
+                    "Text": "South",
+                    "Target": "El Salvador"
+                }
+            ]
+        },
+        "Belize": {
+            "Body": "This is Belize. Fun fact: Guatemala claims over half of the territory of Belize.",
+            "Choices": [
+                {
+                    "Text": "North",
+                    "Target": "Mexico"
+                },
+                {
+                    "Text": "West",
+                    "Target": "Guatemala"
+                }
+            ]
+        },
+        "El Salvador": {
+            "Body": "This is El Salvador.",
+            "Choices": [
+                {
+                    "Text": "Northwest",
+                    "Target": "Guatemala"
+                },
+                {
+                    "Text": "Northeast",
+                    "Target": "Honduras"
+                }
+            ]
+        },
+        "Honduras": {
+            "Body": "This is Honduras.",
+            "Choices": [
+                {
+                    "Text": "West",
+                    "Target": "Guatemala"
+                },
+                {
+                    "Text": "Southwest",
+                    "Target": "El Salvador"
+                },
+                {
+                    "Text": "Southeast",
+                    "Target": "Nicaragua"
+                }
+            ]
+        },
+        "Nicaragua": {
+            "Body": "This is Nicaragua.",
+            "Choices": [
+                {
+                    "Text": "North",
+                    "Target": "Honduras"
+                },
+                {
+                    "Text": "South",
+                    "Target": "Costa Rica"
+                }
+            ]
+        },
+        "Costa Rica": {
+            "Body": "This is Costa Rica.",
+            "Choices": [
+                {
+                    "Text": "North",
+                    "Target": "Nicaragua"
+                },
+                {
+                    "Text": "South",
+                    "Target": "Panama"
+                }
+            ]
+        },
+        "Panama": {
+            "Body": "This is Panama. You've reached the Panama Canal.",
+            "Choices": [
+                {
+                    "Text": "North",
+                    "Target": "Costa Rica"
+                },
+                {
+                    "Text": "South",
+                    "Target": "Beyond"
+                }
+            ]
+        },
+        "Beyond": {
+            "Body": "You've reached South America!"
+        }
+    }
+}
