@@ -1,3 +1,13 @@
+
+//------------------- DATA --------------------------------//
+
+let locationsVisited = []
+
+
+
+//------------------- DATA --------------------------------//
+
+
 class Start extends Scene {
     create() {
         this.engine.setTitle(this.engine.storyData.Title);
@@ -5,14 +15,21 @@ class Start extends Scene {
     }
 
     handleChoice() {
-        this.engine.gotoScene(Location, this.engine.storyData.InitialLocation); // TODO: replace this text by the initial location of the story
+        this.engine.gotoScene(Location, this.engine.storyData.InitialLocation); 
     }
 }
 
 class Location extends Scene {
     create(key) {
         let locationData = this.engine.storyData.Locations[key];
-        this.engine.show(locationData.Body);
+
+        //Check if location has been visited
+        if (locationsVisited.includes(key) && locationData.BodyVisited){
+            this.engine.show(locationData.BodyVisited);
+        }
+        else{
+            this.engine.show(locationData.Body);
+        }
 
         if(locationData.Choices && locationData.Choices.length > 0) {
             for(let choice of locationData.Choices) {
@@ -27,6 +44,10 @@ class Location extends Scene {
         if(choice) {
             this.engine.show("&gt; "+choice.Text);
             this.engine.gotoScene(Location, choice.Target);
+            if (!locationsVisited.includes(choice.Target)){
+                locationsVisited.push(choice.Target);
+            }
+            console.log(locationsVisited);
         } else {
             this.engine.gotoScene(End);
         }

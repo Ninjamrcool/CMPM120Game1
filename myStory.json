@@ -1,150 +1,173 @@
 {
-    "Title": "Countries of North America",
+    "Title": "Space thingy",
     "Credits": "Created by Tyler Roth (tdroth@ucsc.edu).",
-    "InitialLocation": "USA",
+    "InitialLocation": "Start",
     "Locations": {
-        "USA": {
-            "Body": "This is The United States of America.",
+        "Start": {
+            "Body": "You wake up to a loud BANG and low pressure alarms. The walls of the lunar base have given way, and air is rushing out quickly! Thinking fast, you make your way to the airlock and put on your EVA suit. The base's air pressure won't last for long, and neither will your suit's oxygen for much time afterwards.",
             "Choices": [
                 {
-                    "Text": "North",
-                    "Target": "Canada"
-                },
-                {
-                    "Text": "South",
-                    "Target": "Mexico"
+                    "Text": "Examine your surroundings",
+                    "Target": "Airlock"
                 }
             ]
         },
-        "Canada": {
-            "Body": "This is Canada. Very cold!",
+
+        "Airlock": {
+            "Body": "You are in the airlock room, the exit to the interior portion of the colony. A hole larger than your fist has formed from a tear in the wall. You can still feel some of the thin leftover air rushing out. A row of EVA suits lines the wall.",
+            "BodyVisited": "You are in the airlock room.",
             "Choices": [
                 {
-                    "Text": "South",
-                    "Target": "USA"
+                    "Text": "EVA Suits (North)",
+                    "Target": "EVASuits"
+                },
+                {
+                    "Text": "Main Room (East)",
+                    "Target": "MainRoom"
+                },
+                {
+                    "Text": "Exit (West)",
+                    "Target": "Exit"
                 }
             ]
         },
-        "Mexico": {
-            "Body": "This is Mexico.",
+
+        "EVASuits": {
+            "Body": "Only spare EVA suits are left. The rest of your crewmates took a rover to the nearby colony, leaving you alone to manage the base.",
             "Choices": [
                 {
-                    "Text": "North",
-                    "Target": "USA"
-                },
-                {
-                    "Text": "Southwest",
-                    "Target": "Guatemala"
-                },
-                {
-                    "Text": "Southeast",
-                    "Target": "Belize"
+                    "Text": "Airlock (South)",
+                    "Target": "Airlock"
                 }
             ]
         },
-        "Guatemala": {
-            "Body": "This is Guatemala.",
+
+        "Exit": {
+            "Body": "The wall failure cut the power to the airlock, you will need to force it open.. somehow.",
             "Choices": [
                 {
-                    "Text": "North",
-                    "Target": "Mexico"
-                },
-                {
-                    "Text": "Northeast",
-                    "Target": "Belize"
-                },
-                {
-                    "Text": "Southeast",
-                    "Target": "Honduras"
-                },
-                {
-                    "Text": "South",
-                    "Target": "El Salvador"
+                    "Text": "Airlock (East)",
+                    "Target": "Airlock"
                 }
             ]
         },
-        "Belize": {
-            "Body": "This is Belize. Fun fact: Guatemala claims over half of the territory of Belize.",
+
+        "MainRoom": {
+            "Body": "The main room of the colony. It has a table for meetings and meals, a calender for scheduling, and various items scattered across the room.",
             "Choices": [
                 {
-                    "Text": "North",
-                    "Target": "Mexico"
+                    "Text": "Bedroom (North)",
+                    "Target": "Bedroom"
                 },
                 {
-                    "Text": "West",
-                    "Target": "Guatemala"
+                    "Text": "Lab (South)",
+                    "Target": "Lab"
+                },
+                {
+                    "Text": "Gym (East)",
+                    "Target": "Gym"
+                },
+                {
+                    "Text": "Airlock (West)",
+                    "Target": "Airlock"
                 }
             ]
         },
-        "El Salvador": {
-            "Body": "This is El Salvador.",
+
+        "Bedroom": {
+            "Body": "A bedroom housing all of the base's inhabitants.",
             "Choices": [
                 {
-                    "Text": "Northwest",
-                    "Target": "Guatemala"
+                    "Text": "Bathroom (North)",
+                    "Target": "Bathroom"
                 },
                 {
-                    "Text": "Northeast",
-                    "Target": "Honduras"
+                    "Text": "Main Room (South)",
+                    "Target": "MainRoom"
+                },
+                {
+                    "Text": "Storage Room (East)",
+                    "Target": "StorageRoom"
+                },
+                {
+                    "Text": "Lockers (West)",
+                    "Target": "Lockers"
                 }
             ]
         },
-        "Honduras": {
-            "Body": "This is Honduras.",
+
+        "Lockers": {
+            "Body": "A wall of lockers, one for each base member.",
             "Choices": [
                 {
-                    "Text": "West",
-                    "Target": "Guatemala"
-                },
-                {
-                    "Text": "Southwest",
-                    "Target": "El Salvador"
-                },
-                {
-                    "Text": "Southeast",
-                    "Target": "Nicaragua"
+                    "Text": "Bedroom (East)",
+                    "Target": "Bedroom"
                 }
             ]
         },
-        "Nicaragua": {
-            "Body": "This is Nicaragua.",
+
+        "Bathroom": {
+            "Body": "A bathroom. There's a toilet and a sink.",
             "Choices": [
                 {
-                    "Text": "North",
-                    "Target": "Honduras"
-                },
-                {
-                    "Text": "South",
-                    "Target": "Costa Rica"
+                    "Text": "Bedroom (South)",
+                    "Target": "Bedroom"
                 }
             ]
         },
-        "Costa Rica": {
-            "Body": "This is Costa Rica.",
+
+        "StorageRoom": {
+            "Body": "A storage room. There are containers full of rations, tools, and miscellaneous supplies.",
             "Choices": [
                 {
-                    "Text": "North",
-                    "Target": "Nicaragua"
+                    "Text": "Gym (South)",
+                    "Target": "Gym"
                 },
                 {
-                    "Text": "South",
-                    "Target": "Panama"
+                    "Text": "Bedroom (West)",
+                    "Target": "Bedroom"
                 }
             ]
         },
-        "Panama": {
-            "Body": "This is Panama. You've reached the Panama Canal.",
+
+        "Gym": {
+            "Body": "A room full of special low gravity exercise machines.",
             "Choices": [
                 {
-                    "Text": "North",
-                    "Target": "Costa Rica"
+                    "Text": "Storage Room (North)",
+                    "Target": "StorageRoom"
                 },
                 {
-                    "Text": "South",
-                    "Target": "Beyond"
+                    "Text": "Main Room (West)",
+                    "Target": "MainRoom"
                 }
             ]
         },
+
+        "Lab": {
+            "Body": "A fancy laboratory. There are tables with petri dishes growing bacteria, low gravity plant experiments, a pool of algae, and other experiments.",
+            "Choices": [
+                {
+                    "Text": "Main Room (North)",
+                    "Target": "MainRoom"
+                },
+                {
+                    "Text": "Hydroponics (East)",
+                    "Target": "Hydroponics"
+                }
+            ]
+        },
+
+        "Hydroponics": {
+            "Body": "A rooms filled to the brim with shelves of plants.",
+            "Choices": [
+                {
+                    "Text": "Lab (West)",
+                    "Target": "Lab"
+                }
+            ]
+        },
+
         "Beyond": {
             "Body": "You've reached South America!"
         }
