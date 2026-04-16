@@ -39,6 +39,14 @@ class Engine {
         }
     }
 
+    updateOxygenText(oxygen){
+        if (this.oxygenText){
+            this.oxygenText.remove();
+        }
+        this.oxygenText = document.body.appendChild(document.createElement("h1"));
+        this.oxygenText.textContent = "Oxygen: " + oxygen;
+    }
+
     setTitle(title) {
         document.title = title;
         this.header.innerText = title;

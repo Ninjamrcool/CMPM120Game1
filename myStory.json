@@ -18,12 +18,13 @@
             "BodyVisited": "You are in the airlock room.",
             "Choices": [
                 {
-                    "Text": "EVA Suits (North)",
+                    "Text": "EVA Suits",
                     "Target": "EVASuits"
                 },
                 {
                     "Text": "Main Room (East)",
-                    "Target": "MainRoom"
+                    "Target": "MainRoom",
+                    "Oxygen": "2"
                 },
                 {
                     "Text": "Exit (West)",
@@ -50,7 +51,7 @@
                     "Target": "AirlockRoom"
                 },
                 {
-                    "Text": "Open Airlock (East)",
+                    "Text": "Open Airlock",
                     "Target": "Outside",
                     "ReqFlag": "CaptainNote",
                     "ReqFlagValue": "true"
@@ -77,19 +78,23 @@
             "Choices": [
                 {
                     "Text": "Bedroom (North)",
-                    "Target": "Bedroom"
+                    "Target": "Bedroom",
+                    "Oxygen": "2"
                 },
                 {
                     "Text": "Lab (South)",
-                    "Target": "Lab"
+                    "Target": "Lab",
+                    "Oxygen": "2"
                 },
                 {
                     "Text": "Gym (East)",
-                    "Target": "Gym"
+                    "Target": "Gym",
+                    "Oxygen": "2"
                 },
                 {
                     "Text": "Airlock (West)",
-                    "Target": "AirlockRoom"
+                    "Target": "AirlockRoom",
+                    "Oxygen": "2"
                 }
             ]
         },
@@ -99,18 +104,21 @@
             "Choices": [
                 {
                     "Text": "Bathroom (North)",
-                    "Target": "Bathroom"
+                    "Target": "Bathroom",
+                    "Oxygen": "2"
                 },
                 {
                     "Text": "Main Room (South)",
-                    "Target": "MainRoom"
+                    "Target": "MainRoom",
+                    "Oxygen": "2"
                 },
                 {
                     "Text": "Storage Room (East)",
-                    "Target": "StorageRoom"
+                    "Target": "StorageRoom",
+                    "Oxygen": "2"
                 },
                 {
-                    "Text": "Lockers (West)",
+                    "Text": "Lockers",
                     "Target": "Lockers"
                 }
             ]
@@ -149,7 +157,8 @@
             "Choices": [
                 {
                     "Text": "Bedroom (South)",
-                    "Target": "Bedroom"
+                    "Target": "Bedroom",
+                    "Oxygen": "2"
                 }
             ]
         },
@@ -159,11 +168,13 @@
             "Choices": [
                 {
                     "Text": "Gym (South)",
-                    "Target": "Gym"
+                    "Target": "Gym",
+                    "Oxygen": "2"
                 },
                 {
                     "Text": "Bedroom (West)",
-                    "Target": "Bedroom"
+                    "Target": "Bedroom",
+                    "Oxygen": "2"
                 }
             ]
         },
@@ -173,11 +184,13 @@
             "Choices": [
                 {
                     "Text": "Storage Room (North)",
-                    "Target": "StorageRoom"
+                    "Target": "StorageRoom",
+                    "Oxygen": "2"
                 },
                 {
                     "Text": "Main Room (West)",
-                    "Target": "MainRoom"
+                    "Target": "MainRoom",
+                    "Oxygen": "2"
                 }
             ]
         },
@@ -187,11 +200,13 @@
             "Choices": [
                 {
                     "Text": "Main Room (North)",
-                    "Target": "MainRoom"
+                    "Target": "MainRoom",
+                    "Oxygen": "2"
                 },
                 {
                     "Text": "Hydroponics (East)",
-                    "Target": "Hydroponics"
+                    "Target": "Hydroponics",
+                    "Oxygen": "2"
                 }
             ]
         },
@@ -201,9 +216,14 @@
             "Choices": [
                 {
                     "Text": "Lab (West)",
-                    "Target": "Lab"
+                    "Target": "Lab",
+                    "Oxygen": "2"
                 }
             ]
+        },
+
+        "GameOver": {
+            "Body": "You've run out of oxygen... Game Over."
         }
     }
 }
