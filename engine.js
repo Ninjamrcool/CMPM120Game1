@@ -56,6 +56,7 @@ class Engine {
         if (this.lastLastMessage){
             this.lastLastMessage.style.fontSize = "15px";
             this.lastLastMessage.style.margin = "10px";
+            this.lastLastMessage.style.color = "lightgray";
         }
         if (this.lastMessage){
             this.lastLastMessage = this.lastMessage;
@@ -63,11 +64,17 @@ class Engine {
 
         let paragraph = document.createElement("p");
         paragraph.textContent = msg;
-        paragraph.style.fontSize = "24px";
+        paragraph.style.fontSize = "26px";
         this.lastMessage = paragraph;
 
         let div = document.createElement("div");
         div.appendChild(paragraph);
+        this.output.appendChild(div);
+    }
+
+    showEnd(msg){
+        let div = document.createElement("div");
+        div.innerHTML = msg;
         this.output.appendChild(div);
     }
 }

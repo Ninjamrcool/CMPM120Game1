@@ -84,8 +84,8 @@ class Location extends Scene {
 
 class End extends Scene {
     create() {
-        this.engine.show("<hr>");
-        this.engine.show(this.engine.storyData.Credits);
+        this.engine.showEnd("<hr>");
+        this.engine.showEnd(this.engine.storyData.Credits);
     }
 }
 
