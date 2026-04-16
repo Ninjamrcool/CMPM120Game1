@@ -53,8 +53,21 @@ class Engine {
     }
 
     show(msg) {
+        if (this.lastLastMessage){
+            this.lastLastMessage.style.fontSize = "15px";
+            this.lastLastMessage.style.margin = "10px";
+        }
+        if (this.lastMessage){
+            this.lastLastMessage = this.lastMessage;
+        }
+
+        let paragraph = document.createElement("p");
+        paragraph.textContent = msg;
+        paragraph.style.fontSize = "24px";
+        this.lastMessage = paragraph;
+
         let div = document.createElement("div");
-        div.innerHTML = msg;
+        div.appendChild(paragraph);
         this.output.appendChild(div);
     }
 }

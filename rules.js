@@ -67,7 +67,7 @@ class Location extends Scene {
                 return;
             }
 
-            this.engine.show("&gt; "+choice.Text);
+            this.engine.show("> "+choice.Text);
             this.engine.gotoScene(Location, choice.Target);
             if (!locationsVisited.includes(choice.Target)){
                 locationsVisited.push(choice.Target);
