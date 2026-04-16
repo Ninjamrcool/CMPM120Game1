@@ -8,12 +8,12 @@
             "Choices": [
                 {
                     "Text": "Examine your surroundings",
-                    "Target": "Airlock"
+                    "Target": "AirlockRoom"
                 }
             ]
         },
 
-        "Airlock": {
+        "AirlockRoom": {
             "Body": "You are in the airlock room, the exit to the interior portion of the colony. A hole larger than your fist has formed from a tear in the wall. You can still feel some of the thin leftover air rushing out. A row of EVA suits lines the wall.",
             "BodyVisited": "You are in the airlock room.",
             "Choices": [
@@ -36,8 +36,8 @@
             "Body": "Only spare EVA suits are left. The rest of your crewmates took a rover to the nearby colony, leaving you alone to manage the base.",
             "Choices": [
                 {
-                    "Text": "Airlock (South)",
-                    "Target": "Airlock"
+                    "Text": "Airlock Room (South)",
+                    "Target": "AirlockRoom"
                 }
             ]
         },
@@ -46,10 +46,30 @@
             "Body": "The wall failure cut the power to the airlock, you will need to force it open.. somehow.",
             "Choices": [
                 {
-                    "Text": "Airlock (East)",
-                    "Target": "Airlock"
+                    "Text": "Airlock Room (East)",
+                    "Target": "AirlockRoom"
+                },
+                {
+                    "Text": "Open Airlock (East)",
+                    "Target": "Outside",
+                    "ReqFlag": "CaptainNote",
+                    "ReqFlagValue": "true"
                 }
             ]
+        },
+
+        "Outside": {
+            "Body": "You finally manage to get the airlock open, and step foot into the crater your base was dug into. You spot a concrete pad with a rover on it.",
+            "Choices": [
+                {
+                    "Text": "Enter the Rover",
+                    "Target": "Rover"
+                }
+            ]
+        },
+
+        "Rover": {
+            "Body": "You start driving away from the base, hopefully to rendevous with the rest of your crew and let them know what happend."
         },
 
         "MainRoom": {
@@ -69,7 +89,7 @@
                 },
                 {
                     "Text": "Airlock (West)",
-                    "Target": "Airlock"
+                    "Target": "AirlockRoom"
                 }
             ]
         },
@@ -102,6 +122,24 @@
                 {
                     "Text": "Bedroom (East)",
                     "Target": "Bedroom"
+                },
+                {
+                    "Text": "Rummage through the captain's locker",
+                    "Target": "CaptainLocker",
+                    "SetFlag": "CaptainNote",
+                    "SetFlagValue": "true",
+                    "ReqFlag": "CaptainNote",
+                    "ReqFlagValue": "null"
+                }
+            ]
+        },
+
+        "CaptainLocker": {
+            "Body": "You find a note which shows how to open the airlock manually.",
+            "Choices": [
+                {
+                    "Text": "Back",
+                    "Target": "Lockers"
                 }
             ]
         },
@@ -166,10 +204,6 @@
                     "Target": "Lab"
                 }
             ]
-        },
-
-        "Beyond": {
-            "Body": "You've reached South America!"
         }
     }
 }

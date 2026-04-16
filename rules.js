@@ -3,6 +3,7 @@
 
 let locationsVisited = []
 
+let flags = {}
 
 
 //------------------- DATA --------------------------------//
@@ -33,10 +34,17 @@ class Location extends Scene {
 
         if(locationData.Choices && locationData.Choices.length > 0) {
             for(let choice of locationData.Choices) {
-                this.engine.addChoice(choice.Text, choice);
+
+                if (choice.ReqFlag && !flags[choice.ReqFlag]){
+                    flags[choice.ReqFlag] = "null"
+                }
+
+                if (!choice.ReqFlag || flags[choice.ReqFlag] === choice.ReqFlagValue){
+                    this.engine.addChoice(choice.Text, choice);
+                }
             }
         } else {
-            this.engine.addChoice("The end.")
+            this.engine.addChoice("You Win!")
         }
     }
 
@@ -47,7 +55,10 @@ class Location extends Scene {
             if (!locationsVisited.includes(choice.Target)){
                 locationsVisited.push(choice.Target);
             }
-            console.log(locationsVisited);
+            if (choice.SetFlag){
+                flags[choice.SetFlag] = choice.SetFlagValue
+            }
+            console.log(flags)
         } else {
             this.engine.gotoScene(End);
         }
