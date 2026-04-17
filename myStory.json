@@ -4,7 +4,7 @@
     "InitialLocation": "Start",
     "Locations": {
         "Start": {
-            "Body": "You wake up to a loud BANG and blaring low pressure alarms. A wall of the lunar base has ruptured, and air is rushing out quickly! Thinking fast, you make your way to the airlock and put on your EVA suit. The base's air pressure won't last for long, and neither will your suit's oxygen for much time afterwards. You need to find a way out of here...",
+            "Body": "You wake up to a loud BANG and blaring low pressure alarms. A wall of the lunar base has ruptured, and air is rushing out quickly! Thinking fast, you make your way to the airlock and put on your EVA suit. The base's air pressure won't last for long, and neither will your suit's oxygen for much time afterwards. The suit will lose two oxygen each time you move between rooms. You need to find a way out of here...",
             "Choices": [
                 {
                     "Text": "Examine your surroundings",
@@ -18,10 +18,6 @@
             "BodyVisited": "You are in the airlock room.",
             "Choices": [
                 {
-                    "Text": "EVA Suits",
-                    "Target": "EVASuits"
-                },
-                {
                     "Text": "Main Room (East)",
                     "Target": "MainRoom",
                     "Oxygen": "-2"
@@ -29,6 +25,14 @@
                 {
                     "Text": "Exit (West)",
                     "Target": "Exit"
+                },
+                {
+                    "Text": "EVA Suits",
+                    "Target": "EVASuits"
+                },
+                {
+                    "Text": "Communications Computer",
+                    "Target": "CommunicationsComputer"
                 }
             ],
             "SetMap": "AirlockRoom"
@@ -38,7 +42,17 @@
             "Body": "Only a couple spare EVA suits are left. The rest of your crewmates took a rover to the nearby colony, leaving you alone to manage the base. Hopefully you will be able to reunite with them.",
             "Choices": [
                 {
-                    "Text": "Airlock Room (South)",
+                    "Text": "Airlock Room",
+                    "Target": "AirlockRoom"
+                }
+            ]
+        },
+
+        "CommunicationsComputer": {
+            "Body": "You try to turn on the computer to communicate with Earth. The screen remains black. Looks like the power to the computer was cut by the wall failure.",
+            "Choices": [
+                {
+                    "Text": "Airlock Room",
                     "Target": "AirlockRoom"
                 }
             ]
@@ -98,9 +112,23 @@
                     "Text": "Airlock (West)",
                     "Target": "AirlockRoom",
                     "Oxygen": "-2"
+                },
+                {
+                    "Text": "Table",
+                    "Target": "Table"
                 }
             ],
             "SetMap": "MainRoom"
+        },
+
+        "Table": {
+            "Body": "The table has some peppers on it, who forgot to clean up? Well unfortunately, you can't eat from within this bulky suit.",
+            "Choices": [
+                {
+                    "Text": "Main Room",
+                    "Target": "MainRoom"
+                }
+            ]
         },
 
         "Bedroom": {
@@ -265,7 +293,7 @@
         },
 
         "Lab": {
-            "Body": "A fancy laboratory. There are tables with petri dishes and microscopes cultivating bacteria, a large 3d printer, low gravity plant growth experiments, a pool of algae, and other study areas outside your expertise.",
+            "Body": "A fancy laboratory. There are tables with petri dishes and microscopes cultivating bacteria, a large 3d printer, low gravity plant growth experiments, a pool of algae, and other study areas outside your expertise. You can feel the hum of the base's reactor beneath the floor.",
             "BodyVisited": "A fancy laboratory.",
             "Choices": [
                 {
