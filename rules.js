@@ -5,7 +5,7 @@ let locationsVisited = [];
 
 let flags = {};
 
-let oxygen = 40;
+let oxygen = 16;
 
 let oxygenText;
 
@@ -35,14 +35,28 @@ class Location extends Scene {
             this.engine.show(locationData.Body);
         }
 
+        this.engine.updateOxygenText(oxygen);
+        
         if(locationData.Choices && locationData.Choices.length > 0) {
             for(let choice of locationData.Choices) {
 
-                if (choice.ReqFlag && !flags[choice.ReqFlag]){
-                    flags[choice.ReqFlag] = "null";
-                }
+                if (choice.ReqFlags){
+                    let satisfiesReqs = true;
+                    for (let i = 0; i < choice.ReqFlags.length; i++){
+                        if (!flags[choice.ReqFlags[i]]){
+                            flags[choice.ReqFlags[i]] = "null";
+                        }
 
-                if (!choice.ReqFlag || flags[choice.ReqFlag] === choice.ReqFlagValue){
+                        if (flags[choice.ReqFlags[i]] !== choice.ReqFlagValues[i]){
+                            satisfiesReqs = false;
+                            break;
+                        }
+                    }
+                    if (satisfiesReqs){
+                        this.engine.addChoice(choice.Text, choice);
+                    }
+                }
+                else{
                     this.engine.addChoice(choice.Text, choice);
                 }
             }
@@ -54,13 +68,13 @@ class Location extends Scene {
             this.engine.addChoice("You Win!")
         }
 
-        this.engine.updateOxygenText(oxygen);
+        
     }
 
     handleChoice(choice) {
         if(choice) {
             if (choice.Oxygen){
-                oxygen -= parseInt(choice.Oxygen);
+                oxygen += parseInt(choice.Oxygen);
             }
             if (oxygen < 1){
                 this.engine.gotoScene(Location, "GameOver");

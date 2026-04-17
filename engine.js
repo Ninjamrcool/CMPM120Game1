@@ -64,7 +64,7 @@ class Engine {
 
         let paragraph = document.createElement("p");
         paragraph.textContent = msg;
-        paragraph.style.fontSize = "26px";
+        paragraph.style.fontSize = "28px";
         this.lastMessage = paragraph;
 
         let div = document.createElement("div");

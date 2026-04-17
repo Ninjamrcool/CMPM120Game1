@@ -4,7 +4,7 @@
     "InitialLocation": "Start",
     "Locations": {
         "Start": {
-            "Body": "You wake up to a loud BANG and low pressure alarms. The walls of the lunar base have given way, and air is rushing out quickly! Thinking fast, you make your way to the airlock and put on your EVA suit. The base's air pressure won't last for long, and neither will your suit's oxygen for much time afterwards.",
+            "Body": "You wake up to a loud BANG and blaring low pressure alarms. A wall of the lunar base has ruptured, and air is rushing out quickly! Thinking fast, you make your way to the airlock and put on your EVA suit. The base's air pressure won't last for long, and neither will your suit's oxygen for much time afterwards. You need to find a way out of here...",
             "Choices": [
                 {
                     "Text": "Examine your surroundings",
@@ -14,7 +14,7 @@
         },
 
         "AirlockRoom": {
-            "Body": "You are in the airlock room, the exit to the interior portion of the colony. A hole larger than your fist has formed from a tear in the wall. You can still feel some of the thin leftover air rushing out. A row of EVA suits lines the wall.",
+            "Body": "You are inside the airlock room, which serves as the exit to the interior half of the colony. A hole larger than your fist has formed from a tear in the wall. You can still feel some of the thin leftover air rushing out. A row of EVA suits lines one of the walls.",
             "BodyVisited": "You are in the airlock room.",
             "Choices": [
                 {
@@ -24,7 +24,7 @@
                 {
                     "Text": "Main Room (East)",
                     "Target": "MainRoom",
-                    "Oxygen": "2"
+                    "Oxygen": "-2"
                 },
                 {
                     "Text": "Exit (West)",
@@ -34,7 +34,7 @@
         },
 
         "EVASuits": {
-            "Body": "Only spare EVA suits are left. The rest of your crewmates took a rover to the nearby colony, leaving you alone to manage the base.",
+            "Body": "Only a couple spare EVA suits are left. The rest of your crewmates took a rover to the nearby colony, leaving you alone to manage the base. Hopefully you will be able to reunite with them.",
             "Choices": [
                 {
                     "Text": "Airlock Room (South)",
@@ -44,7 +44,7 @@
         },
 
         "Exit": {
-            "Body": "The wall failure cut the power to the airlock, you will need to force it open.. somehow.",
+            "Body": "The wall's rupture cut the power cables that lead to the airlock, you will need to force it open... somehow.",
             "Choices": [
                 {
                     "Text": "Airlock Room (East)",
@@ -53,14 +53,14 @@
                 {
                     "Text": "Open Airlock",
                     "Target": "Outside",
-                    "ReqFlag": "CaptainNote",
-                    "ReqFlagValue": "true"
+                    "ReqFlags": ["Wrench"],
+                    "ReqFlagValues": ["true"]
                 }
             ]
         },
 
         "Outside": {
-            "Body": "You finally manage to get the airlock open, and step foot into the crater your base was dug into. You spot a concrete pad with a rover on it.",
+            "Body": "You clumsily grasp the wrench from within your thick suit, and finally manage to get the airlock open. You step foot into the crater your base was dug into, and spot the concrete pad with your rover on it.",
             "Choices": [
                 {
                     "Text": "Enter the Rover",
@@ -74,48 +74,50 @@
         },
 
         "MainRoom": {
-            "Body": "The main room of the colony. It has a table for meetings and meals, a calender for scheduling, and various items scattered across the room.",
+            "Body": "The main room in the center of the colony. It has a table for meetings and meals, a calender for scheduling, a liesure area, and various other items scattered across the room. There are four doors in each direction, leading to various other rooms.",
+            "BodyVisited": "You are in the main room.",
             "Choices": [
                 {
                     "Text": "Bedroom (North)",
                     "Target": "Bedroom",
-                    "Oxygen": "2"
+                    "Oxygen": "-2"
                 },
                 {
                     "Text": "Lab (South)",
                     "Target": "Lab",
-                    "Oxygen": "2"
+                    "Oxygen": "-2"
                 },
                 {
                     "Text": "Gym (East)",
                     "Target": "Gym",
-                    "Oxygen": "2"
+                    "Oxygen": "-2"
                 },
                 {
                     "Text": "Airlock (West)",
                     "Target": "AirlockRoom",
-                    "Oxygen": "2"
+                    "Oxygen": "-2"
                 }
             ]
         },
 
         "Bedroom": {
-            "Body": "A bedroom housing all of the base's inhabitants.",
+            "Body": "You are in the bedroom. There is are two bunk beds which all of the base's inhabitants are assigned to. Your bed is still messy from your sudden awakening. Your potted plant has dried and is quickly wilting due to the vacuum.",
+            "BodyVisited": "You are in the bedroom.",
             "Choices": [
                 {
                     "Text": "Bathroom (North)",
                     "Target": "Bathroom",
-                    "Oxygen": "2"
+                    "Oxygen": "-2"
                 },
                 {
                     "Text": "Main Room (South)",
                     "Target": "MainRoom",
-                    "Oxygen": "2"
+                    "Oxygen": "-2"
                 },
                 {
                     "Text": "Storage Room (East)",
                     "Target": "StorageRoom",
-                    "Oxygen": "2"
+                    "Oxygen": "-2"
                 },
                 {
                     "Text": "Lockers",
@@ -125,25 +127,26 @@
         },
 
         "Lockers": {
-            "Body": "A wall of lockers, one for each base member.",
+            "Body": "You stand in front of a wall of lockers, one for each base member.",
             "Choices": [
                 {
-                    "Text": "Bedroom (East)",
+                    "Text": "Bedroom",
                     "Target": "Bedroom"
                 },
                 {
                     "Text": "Rummage through the captain's locker",
                     "Target": "CaptainLocker",
+                    "Oxygen": "-1",
                     "SetFlag": "CaptainNote",
                     "SetFlagValue": "true",
-                    "ReqFlag": "CaptainNote",
-                    "ReqFlagValue": "null"
+                    "ReqFlags": ["CaptainNote"],
+                    "ReqFlagValues": ["null"]
                 }
             ]
         },
 
         "CaptainLocker": {
-            "Body": "You find a note which shows how to open the airlock manually.",
+            "Body": "You find a mission note. Scanning down the page, you find what you are looking for: \"In the event of airlock power failure, you will need to use a wrench to manually open it. Assuming the crew has kept to proper organizational standards, your wrenches should be located in bag #5 in the storage room.",
             "Choices": [
                 {
                     "Text": "Back",
@@ -153,71 +156,151 @@
         },
 
         "Bathroom": {
-            "Body": "A bathroom. There's a toilet and a sink.",
+            "Body": "A bathroom. There's a toilet and a sink. They probably cost $100,000 to make them work properly in low gravity.",
+            "BodyVisited": "You are in the bathroom.",
             "Choices": [
                 {
                     "Text": "Bedroom (South)",
                     "Target": "Bedroom",
-                    "Oxygen": "2"
+                    "Oxygen": "-2"
                 }
             ]
         },
 
         "StorageRoom": {
-            "Body": "A storage room. There are containers full of rations, tools, and miscellaneous supplies.",
+            "Body": "A storage room. There are bags and containers full of rations, tools, and miscellaneous supplies.",
             "Choices": [
                 {
                     "Text": "Gym (South)",
                     "Target": "Gym",
-                    "Oxygen": "2"
+                    "Oxygen": "-2"
                 },
                 {
                     "Text": "Bedroom (West)",
                     "Target": "Bedroom",
-                    "Oxygen": "2"
+                    "Oxygen": "-2"
+                },
+                {
+                    "Text": "Hanging Oxygen Tank",
+                    "Target": "StorageOxygenTank",
+                    "Oxygen": "10",
+                    "SetFlag": "StorageOxygenTank",
+                    "SetFlagValue": "true",
+                    "ReqFlags": ["StorageOxygenTank"],
+                    "ReqFlagValues": ["null"]
+                },
+                {
+                    "Text": "Search for a Wrench",
+                    "Target": "Wrench",
+                    "Oxygen": "-1",
+                    "SetFlag": "Wrench",
+                    "SetFlagValue": "true",
+                    "ReqFlags": ["CaptainNote", "Wrench"],
+                    "ReqFlagValues": ["true", "null"]
+                }
+            ]
+        },
+
+        "StorageOxygenTank": {
+            "Body": "You find an extra oxygen tank hanging from a rack. It refills your tank partially. (+10 Oxygen)",
+            "Choices": [
+                {
+                    "Text": "Back",
+                    "Target": "StorageRoom"
+                }
+            ]
+        },
+
+        "Wrench": {
+            "Body": "You look at a few bags, finding the one labeled \"5\" and opening it. Inside are various wrenches of different sizes and specifications. You take one of them.",
+            "Choices": [
+                {
+                    "Text": "Back",
+                    "Target": "StorageRoom"
                 }
             ]
         },
 
         "Gym": {
-            "Body": "A room full of special low gravity exercise machines.",
+            "Body": "You enter the gym, a room full of treadmills, resistance bands, and exercise bikes, specially designed for low gravity.",
+            "BodyVisited": "The gym, a room full of exercise equipment.",
             "Choices": [
                 {
                     "Text": "Storage Room (North)",
                     "Target": "StorageRoom",
-                    "Oxygen": "2"
+                    "Oxygen": "-2"
                 },
                 {
                     "Text": "Main Room (West)",
                     "Target": "MainRoom",
-                    "Oxygen": "2"
+                    "Oxygen": "-2"
+                },
+                {
+                    "Text": "Oxygen Tank",
+                    "Target": "GymOxygenTank",
+                    "Oxygen": "8",
+                    "SetFlag": "GymOxygenTank",
+                    "SetFlagValue": "true",
+                    "ReqFlags": ["GymOxygenTank"],
+                    "ReqFlagValues": ["null"]
+                }
+            ]
+        },
+
+        "GymOxygenTank": {
+            "Body": "Seems like one of the crew members left a half filled oxygen tank on the bench, this should hold you over for awhile. (+8 Oxygen)",
+            "Choices": [
+                {
+                    "Text": "Back",
+                    "Target": "Gym"
                 }
             ]
         },
 
         "Lab": {
-            "Body": "A fancy laboratory. There are tables with petri dishes growing bacteria, low gravity plant experiments, a pool of algae, and other experiments.",
+            "Body": "A fancy laboratory. There are tables with petri dishes and microscopes cultivating bacteria, a large 3d printer, low gravity plant growth experiments, a pool of algae, and other study areas outside your expertise.",
+            "BodyVisited": "A fancy laboratory.",
             "Choices": [
                 {
                     "Text": "Main Room (North)",
                     "Target": "MainRoom",
-                    "Oxygen": "2"
+                    "Oxygen": "-2"
                 },
                 {
                     "Text": "Hydroponics (East)",
                     "Target": "Hydroponics",
-                    "Oxygen": "2"
+                    "Oxygen": "-2"
+                },
+                {
+                    "Text": "Oxygen Tank",
+                    "Target": "LabOxygenTank",
+                    "Oxygen": "12",
+                    "SetFlag": "LabOxygenTank",
+                    "SetFlagValue": "true",
+                    "ReqFlags": ["LabOxygenTank"],
+                    "ReqFlagValues": ["null"]
+                }
+            ]
+        },
+
+        "LabOxygenTank": {
+            "Body": "You spot an oxygen tank lying in the corner of the room. You use it to refill part of your suit's tank. (+12 Oxygen)",
+            "Choices": [
+                {
+                    "Text": "Back",
+                    "Target": "Lab"
                 }
             ]
         },
 
         "Hydroponics": {
-            "Body": "A rooms filled to the brim with shelves of plants.",
+            "Body": "A room next to the lab which is filled to the brim with shelves of plants. A water tank fills a corner of the room, and nutrient storage lines the walls. This round of tests seems to include multiple pepper species.",
+            "BodyVisited": "A room next to the lab which is filled to the brim with shelves of plants.",
             "Choices": [
                 {
                     "Text": "Lab (West)",
                     "Target": "Lab",
-                    "Oxygen": "2"
+                    "Oxygen": "-2"
                 }
             ]
         },
