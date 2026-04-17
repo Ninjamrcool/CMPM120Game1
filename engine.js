@@ -65,11 +65,23 @@ class Engine {
         let paragraph = document.createElement("p");
         paragraph.textContent = msg;
         paragraph.style.fontSize = "28px";
+
+        paragraph.style.transition = "none";
+        paragraph.style.transform = "scale(0.001)"
+        paragraph.style.opacity = "0"
+
         this.lastMessage = paragraph;
 
         let div = document.createElement("div");
         div.appendChild(paragraph);
         this.output.appendChild(div);
+
+        //This thingy waits a frame
+        requestAnimationFrame(() => {
+            paragraph.style.removeProperty("transition");
+            paragraph.style.removeProperty("transform");
+            paragraph.style.removeProperty("opacity");
+        });
     }
 
     showEnd(msg){

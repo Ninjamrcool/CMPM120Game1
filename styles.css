@@ -1,9 +1,21 @@
 h1 {
   color: white;
+  transition: transform 0.25s, opacity 1s;
+  transform-origin: "0 0";
+}
+
+h1:hover {
+  transform: scale(1.01)
 }
 
 p {
   color: white;
+  transition: transform 0.25s;
+  transform-origin: "0 0";
+}
+
+p:hover {
+  transform: scale(1.01)
 }
 
 body{
