@@ -30,7 +30,8 @@
                     "Text": "Exit (West)",
                     "Target": "Exit"
                 }
-            ]
+            ],
+            "SetMap": "AirlockRoom"
         },
 
         "EVASuits": {
@@ -66,7 +67,8 @@
                     "Text": "Enter the Rover",
                     "Target": "Rover"
                 }
-            ]
+            ],
+            "SetMap": "Outside"
         },
 
         "Rover": {
@@ -97,7 +99,8 @@
                     "Target": "AirlockRoom",
                     "Oxygen": "-2"
                 }
-            ]
+            ],
+            "SetMap": "MainRoom"
         },
 
         "Bedroom": {
@@ -123,7 +126,8 @@
                     "Text": "Lockers",
                     "Target": "Lockers"
                 }
-            ]
+            ],
+            "SetMap": "Bedroom"
         },
 
         "Lockers": {
@@ -164,7 +168,8 @@
                     "Target": "Bedroom",
                     "Oxygen": "-2"
                 }
-            ]
+            ],
+            "SetMap": "Bathroom"
         },
 
         "StorageRoom": {
@@ -198,7 +203,8 @@
                     "ReqFlags": ["CaptainNote", "Wrench"],
                     "ReqFlagValues": ["true", "null"]
                 }
-            ]
+            ],
+            "SetMap": "StorageRoom"
         },
 
         "StorageOxygenTank": {
@@ -244,7 +250,8 @@
                     "ReqFlags": ["GymOxygenTank"],
                     "ReqFlagValues": ["null"]
                 }
-            ]
+            ],
+            "SetMap": "Gym"
         },
 
         "GymOxygenTank": {
@@ -280,7 +287,8 @@
                     "ReqFlags": ["LabOxygenTank"],
                     "ReqFlagValues": ["null"]
                 }
-            ]
+            ],
+            "SetMap": "Lab"
         },
 
         "LabOxygenTank": {
@@ -302,7 +310,8 @@
                     "Target": "Lab",
                     "Oxygen": "-2"
                 }
-            ]
+            ],
+            "SetMap": "Hydroponics"
         },
 
         "GameOver": {

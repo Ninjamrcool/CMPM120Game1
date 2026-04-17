@@ -9,9 +9,32 @@ class Engine {
         this.firstSceneClass = firstSceneClass;
         this.storyDataUrl = storyDataUrl;
 
+        //Theres probably a way to do this with css and html and just have javascript find the elements but i cant be asked
         this.header = document.body.appendChild(document.createElement("h1"));
-        this.output = document.body.appendChild(document.createElement("div"));
-        this.actionsContainer = document.body.appendChild(document.createElement("div"));
+
+        this.contentContainer = document.body.appendChild(document.createElement("div"));
+        this.contentContainer.style.width = "66%";
+        this.contentContainer.style.height = "90%";
+        this.contentContainer.style.display = "inline-block";
+        this.contentContainer.style.verticalAlign = "top";
+        this.contentContainer.style.overflowY = "auto";
+        this.contentContainer.style.overflowX = "hidden";
+
+        this.output = this.contentContainer.appendChild(document.createElement("div"));
+
+        this.mapContainer = document.body.appendChild(document.createElement("div"));
+        this.mapContainer.style.width = "33%";
+        this.mapContainer.style.display = "inline-block";
+
+        this.mapImage = this.mapContainer.appendChild(document.createElement("img"));
+        this.mapImage.src = "images/map/Outside.png";
+        this.mapImage.style.width = "100%";
+        this.mapImage.style.height = "100%";
+        this.mapImage.style.imageRendering = "pixelated";
+        this.mapImage.style.border = "0.5vw solid #333333"
+        this.mapImage.style.borderRadius = "0.5vw"
+
+        this.actionsContainer = this.contentContainer.appendChild(document.createElement("div"));
 
         fetch(storyDataUrl).then(
             (response) => response.json()
@@ -43,7 +66,7 @@ class Engine {
         if (this.oxygenText){
             this.oxygenText.remove();
         }
-        this.oxygenText = document.body.appendChild(document.createElement("h1"));
+        this.oxygenText = this.contentContainer.appendChild(document.createElement("h1"));
         this.oxygenText.textContent = "Oxygen: " + oxygen;
     }
 
@@ -81,6 +104,8 @@ class Engine {
             paragraph.style.removeProperty("transition");
             paragraph.style.removeProperty("transform");
             paragraph.style.removeProperty("opacity");
+            // Scroll the thingy down
+            this.contentContainer.scrollTop = 9999999;
         });
     }
 
@@ -88,6 +113,10 @@ class Engine {
         let div = document.createElement("div");
         div.innerHTML = msg;
         this.output.appendChild(div);
+    }
+
+    SetMapImage(image){
+        this.mapImage.src = "images/map/" + image + ".png";
     }
 }
 

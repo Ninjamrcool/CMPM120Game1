@@ -68,7 +68,9 @@ class Location extends Scene {
             this.engine.addChoice("You Win!")
         }
 
-        
+        if (locationData.SetMap){
+            this.engine.SetMapImage(locationData.SetMap);
+        }
     }
 
     handleChoice(choice) {
